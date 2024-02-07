@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .rating-options {
+    margin-bottom: 15px;
+  }
+
+  .rating-option {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+  <h1>Faculty Feedback Form</h1>
+  <form id="feedbackForm" action="/yoo.php" method="post">
+    <div>
+      <label for="studentName">Your Name:</label>
+      <input type="text" id="studentName" name="studentName" required>
+    </div>
+    <div>
+      <label for="studentEmail">Your Email:</label>
+      <input type="email" id="studentEmail" name="studentEmail" required>
+    </div>
+    <div>
+      <label for="facultyName">Faculty Name:</label>
+      <select id="facultyName" name="facultyName" required>
+        <option value="" disabled selected>Select Faculty</option>
+        <option value="Computer Engineering">Computer Engineering</option>
+        <option value="Electrical Engineering">Electrical Engineering</option>
+        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+        <option value="Civil Engineering">Civil Engineering</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+      </select>
+    </div>
+    <div class="rating-options">
+      <label>Rating:</label>
+      <div class="rating-option">
+        <input type="radio" id="ratingGood" name="rating" value="Good" required>
+        <label for="ratingGood">Good</label>
+      </div>
+      <div class="rating-option">
+        <input type="radio" id="ratingSatisfactory" name="rating" value="Satisfactory">
+        <label for="ratingSatisfactory">Satisfactory</label>
+      </div>
+      <div class="rating-option">
+        <input type="radio" id="ratingAverage" name="rating" value="Average">
+        <label for="ratingAverage">Average</label>
+      </div>
+      <div class="rating-option">
+        <input type="radio" id="ratingBelowAverage" name="rating" value="Below Average">
+        <label for="ratingBelowAverage">Below Average</label>
+      </div>
+      <div class="rating-option">
+        <input type="radio" id="ratingPoor" name="rating" value="Poor">
+        <label for="ratingPoor">Poor</label>
+      </div>
+    </div>
+    <div>
+      <label for="positiveAspects">Positive Aspects:</label><br>
+      <textarea id="positiveAspects" name="positiveAspects" rows="4" cols="50"></textarea>
+    </div>
+    <div>
+      <label for="areasForImprovement">Areas for Improvement:</label><br>
+      <textarea id="areasForImprovement" name="areasForImprovement" rows="4" cols="50"></textarea>
+    </div>
+    <button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>
